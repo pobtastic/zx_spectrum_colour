@@ -1,6 +1,10 @@
 # ZX Spectrum Colour
 
-Provides the ZX Spectrum colour from a given value.
+This program has two functionalities:
+
+1. Provides the ZX Spectrum colour from a given value.
+2. Provides the attribute byte value from the selected ZX Spectrum colour/
+   bright/ flash component values.
 
 ## Installation
 
@@ -11,19 +15,20 @@ pip install .
 ## Usage
 
 ```
-$ zxcolour --help
-usage: zxcolour [-h] attribute_byte
+$ zxcolour -h
+usage: zxcolour [-h] [--calculate] [attribute_byte]
 
-Displays what ZX Spectrum colour a given attribute byte is.
+Displays which ZX Spectrum colour a given attribute byte is.
 
 positional arguments:
   attribute_byte  The attribute byte to use
 
 options:
   -h, --help      show this help message and exit
+  --calculate     Calculate the attribute byte from ink, paper, bright, flash inputs
 ```
 
-### Example
+### Example 1
 
 Typing the following:
 ```
@@ -43,4 +48,30 @@ Flash:  OFF
 Noting that this is the same as typing:
 ```
 zxcolour 35
+```
+
+### Example 2
+
+Typing the following:
+```
+$ zxcolour --calculate
+```
+
+Would produce the following output:
+```
+Available colours:
+0: BLACK (Bright: BLACK)
+1: BLUE (Bright: BLUE)
+2: RED (Bright: RED)
+3: MAGENTA (Bright: MAGENTA)
+4: GREEN (Bright: GREEN)
+5: CYAN (Bright: CYAN)
+6: YELLOW (Bright: YELLOW)
+7: WHITE (Bright: WHITE)
+Choose INK colour (0-7): 7
+Choose PAPER colour (0-7): 5
+Is BRIGHT mode on? (0=NO, 1=YES): 1
+Is FLASH mode on? (0=NO, 1=YES): 0
+
+Calculated attribute byte: 0x6F (decimal: 111)
 ```

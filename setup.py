@@ -2,11 +2,11 @@ from setuptools import setup, find_packages
 
 setup(
 	name="zx_spectrum_colour",
-	version="0.1.0",
+	version="0.2.0",
 	packages=find_packages(),
 	author="Paul Maddern",
 	author_email="paul@arcadegeek.co.uk",
-	description="Provides the ZX Spectrum colour from a given value.",
+	description="ZX Spectrum colour kit; provides a way to show what colours an attribute byte is, and vice-versa.",
 	long_description=open("README.md").read(),
 	long_description_content_type="text/markdown",
 	url="https://github.com/pobtastic/zx_spectrum_colour",
